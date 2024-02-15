@@ -8,10 +8,10 @@
 </head>
     <body>
          <h1>Bestilling av kinobiletter</h1>
-            <section>
-                <label for=velgFilm>Velg film:</label>
-                    <select id="velgFilm">
-                        <option value="film1">Film1</option>
+            <section> <!-- Starting the section of code for the first "excersise" -->
+                <label for=chooseFilm>Velg film:</label> <!-- Label allows me to write a text in front of option bar -->
+                    <select id="chooseFilm"> <!-- I select the label over and make an option bar for it -->
+                        <option value="film1">Film1</option> <!-- Here the list of options start (didn`t come up with something better than these names) -->
                         <option value="film2">Film2</option>
                         <option value="film3">Film3</option>
                         <option value="film4">Film4</option>
@@ -19,9 +19,43 @@
                     </select>
             </section>
 
-             <section>
-                 <label for=antallBiletter>Antall biletter:</label>
-                 <input id="antallBiletter" type="text">
-             </section>
+         <div style="height: 30px;"></div>
+
+         <section>
+                 <label for=nrOfTickets>Antall biletter:</label> <!-- Label allows me to write a text in front of text bar -->
+                 <input id="nrOfTickets" type="text">
+         </section>
+
+         <div style="height: 30px;"></div> <!-- Making gap so that it looks prettier -->
+
+         <section> <!-- Starting the section of code for the third "excersise" -->
+             <label for=name>Fornavn:</label> <!-- Label allows me to write a text in front of text bar -->
+             <input id="name" type="text">
+         </section>
+
+         <section> <!-- Starting the section of code for the fourth "excersise" -->
+             <label for=surname>Etternavn:</label> <!-- Label allows me to write a text in front of text bar -->
+             <input id="surname" type="text">
+         </section>
+
+         <section> <!-- Starting the section of code for the fifth "excersise" -->
+             <label for=phonenr>Telefonnr:</label> <!-- Label allows me to write a text in front of text bar -->
+             <input id="phonenr" type="text">
+         </section>
+
+         <section> <!-- Starting the section of code for the sixth "excersise" -->
+             <label for=email>E-post:</label> <!-- Label allows me to write a text in front of text bar -->
+             <input id="email" type="text">
+         </section>
+
+         <div style="height: 30px;"></div> <!-- Making gap so that it looks prettier -->
+
+         <button onclick="showOrder()">Kjøp biletter</button>
+
+         <div style="height: 30px;"></div> <!-- Making gap so that it looks prettier -->
+
+         <h2>Alle biletter</h2>
+
+         <button onclick="deleteAllOrders()">Slett alle bilettene</button>
     </body>
 </html>
