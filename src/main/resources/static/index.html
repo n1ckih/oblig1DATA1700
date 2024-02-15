@@ -23,34 +23,34 @@
 
          <section>
                  <label for=nrOfTickets>Antall biletter:</label> <!-- Label allows me to write a text in front of text bar -->
-                 <input id="nrOfTickets" type="text">
+                 <input id="nrOfTickets" type="text"><span id="errorNumbers" class="error" style="color: red;"></span>
          </section>
 
          <div style="height: 30px;"></div> <!-- Making gap so that it looks prettier -->
 
          <section> <!-- Starting the section of code for the third "excersise" -->
              <label for=name>Fornavn:</label> <!-- Label allows me to write a text in front of text bar -->
-             <input id="name" type="text">
+             <input id="name" type="text"><span id="needToWriteSomething" class="error" style="color: red;"></span>
          </section>
 
          <section> <!-- Starting the section of code for the fourth "excersise" -->
              <label for=surname>Etternavn:</label> <!-- Label allows me to write a text in front of text bar -->
-             <input id="surname" type="text">
+             <input id="surname" type="text"><span id="needToWriteSomething2" class="error" style="color: red;"></span>
          </section>
 
          <section> <!-- Starting the section of code for the fifth "excersise" -->
              <label for=phonenr>Telefonnr:</label> <!-- Label allows me to write a text in front of text bar -->
-             <input id="phonenr" type="text">
+             <input id="phonenr" type="text"><span id="needNumber" class="error" style="color: red;"></span>
          </section>
 
          <section> <!-- Starting the section of code for the sixth "excersise" -->
              <label for=email>E-post:</label> <!-- Label allows me to write a text in front of text bar -->
-             <input id="email" type="text">
+             <input id="email" type="text"><span id="validEmail" class="error" style="color: red;"></span>
          </section>
 
          <div style="height: 30px;"></div> <!-- Making gap so that it looks prettier -->
 
-         <button onclick="showOrder()">Kjøp biletter</button>
+         <button onclick="searchFail()">Kjøp biletter</button>
 
          <div style="height: 30px;"></div> <!-- Making gap so that it looks prettier -->
 
