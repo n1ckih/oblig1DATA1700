@@ -1,3 +1,7 @@
+// Making array where we will store our orders
+var ticketOrders = [];
+
+// Function for the button to check if input text is right
 function searchFail() {
     var nrOfTickets = document.getElementById("nrOfTickets").value;
     var name = document.getElementById("name").value;
@@ -5,9 +9,7 @@ function searchFail() {
     var phonenr = document.getElementById("phonenr").value;
     var email = document.getElementById("email").value;
 
-    // If the input text is fuilled up cofferctly, this message will appear
-
-
+    // Perform input validation
     document.getElementById("errorNumbers").textContent = "";
     document.getElementById("needToWriteSomething").textContent = "";
     document.getElementById("needToWriteSomething2").textContent = "";
@@ -15,7 +17,7 @@ function searchFail() {
     document.getElementById("validEmail").textContent = "";
 
     if (isNaN(nrOfTickets) || nrOfTickets === "") {
-        document.getElementById("errorNumbers").textContent = "Du må skrive inn tall.";
+        document.getElementById("errorNumbers").textContent = "Du må velge antall biletter.";
     }
     if (name === "") {
         document.getElementById("needToWriteSomething").textContent = "Navnet må fylles ut.";
@@ -29,23 +31,61 @@ function searchFail() {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         document.getElementById("validEmail").textContent = "Skriv inn riktig e-post.";
     }
+
+    // Clear input fields after successful input
+    if (isNaN(nrOfTickets) || nrOfTickets === "" || name === "" || surname === "" || !/^\d{8}$/.test(phonenr) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        // Do not clear if any validation fails
+    } else {
+        // Create a ticket order object
+        var ticketOrder = {
+            nrOfTickets: nrOfTickets,
+            name: name,
+            surname: surname,
+            phonenr: phonenr,
+            email: email
+        };
+
+        // Push filled form into the ticketOrders array
+        ticketOrders.push(ticketOrder);
+
+        // Clear input fields
+        document.getElementById("nrOfTickets").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("surname").value = "";
+        document.getElementById("phonenr").value = "";
+        document.getElementById("email").value = "";
+
+        // Update ticket list
+        displayTicketOrders();
+    }
 }
-// } catch (error) {
-    //switch (error.message) {
-        //case "Du må skrive inn tall.":
-           // document.getElementById("errorNumbers").textContent = error.message;
-           // break;
-        //case "Navnet må fylles ut.":
-           // document.getElementById("needToWriteSomething").textContent = error.message;
-           // break;
-        //case "Etternavnet må fylles ut.":
-          //  document.getElementById("needToWriteSomething2").textContent = error.message;
-           // break;
-        //case "Skriv inn riktig mobilnummer.":
-           // document.getElementById("needNumber").textContent = error.message;
-            //break;
-       // case "Skriv inn riktig e-post.":
-          //  document.getElementById("validEmail").textContent = error.message;
-          //  break;
-    //}
-//}
+
+// Function to show orders
+function displayTicketOrders() {
+    var output = "<table><tr><th>Navn</th><th>Etternavn</th><th>Antall billetter</th><th>Telefonnr</th><th>E-post</th></tr>";
+
+    // Loop through each ticket order in the ticketOrders array
+    for (var i = 0; i < ticketOrders.length; i++) {
+        output += "<tr>";
+        output += "<td>" + ticketOrders[i].name + "</td>";
+        output += "<td>" + ticketOrders[i].surname + "</td>";
+        output += "<td>" + ticketOrders[i].nrOfTickets + "</td>";
+        output += "<td>" + ticketOrders[i].phonenr + "</td>";
+        output += "<td>" + ticketOrders[i].email + "</td>";
+        output += "</tr>";
+    }
+
+    output += "</table>";
+
+    // Display the order table in the HTML
+    document.getElementById("ticketOrderTable").innerHTML = output;
+}
+
+// Function to delete all ticket orders
+function deleteAllOrders() {
+    // Clear the ticketOrders array
+    ticketOrders = [];
+
+    // Update ticket list display
+    displayTicketOrders();
+}

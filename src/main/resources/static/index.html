@@ -22,8 +22,8 @@
          <div style="height: 30px;"></div>
 
          <section>
-                 <label for=nrOfTickets>Antall biletter:</label> <!-- Label allows me to write a text in front of text bar -->
-                 <input id="nrOfTickets" type="text"><span id="errorNumbers" class="error" style="color: red;"></span>
+             <label for=nrOfTickets>Antall biletter:</label> <!-- Label allows me to write a text in front of text bar -->
+             <input id="nrOfTickets" type="text"><span id="errorNumbers" class="error" style="color: red;"></span>
          </section>
 
          <div style="height: 30px;"></div> <!-- Making gap so that it looks prettier -->
@@ -50,12 +50,14 @@
 
          <div style="height: 30px;"></div> <!-- Making gap so that it looks prettier -->
 
-         <button onclick="searchFail()">Kjøp biletter</button>
+         <button onclick="searchFail()">Kjøp biletter</button> <!-- Button to register orders and search for input fails -->
+         <div id="ticketOrderTable"></div>
+
 
          <div style="height: 30px;"></div> <!-- Making gap so that it looks prettier -->
 
          <h2>Alle biletter</h2>
 
-         <button onclick="deleteAllOrders()">Slett alle bilettene</button>
+         <button onclick="deleteAllOrders()">Slett alle bilettene</button> <!-- Button to delete everything we have inn the array -->
     </body>
 </html>
