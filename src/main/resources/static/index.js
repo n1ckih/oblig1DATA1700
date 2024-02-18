@@ -16,7 +16,7 @@ function searchFail() {
     document.getElementById("needNumber").textContent = "";
     document.getElementById("validEmail").textContent = "";
 
-    if (isNaN(nrOfTickets) || nrOfTickets === "") {
+    if (isNaN(nrOfTickets) || nrOfTickets === "") { // check if input is not a number, source: https://www.w3schools.com/jsref/jsref_isnan.asp#:~:text=Description,a%20number%20before%20testing%20it.
         document.getElementById("errorNumbers").textContent = "Du må velge antall biletter.";
     }
     if (name === "") {
@@ -25,10 +25,10 @@ function searchFail() {
     if (surname === "") {
         document.getElementById("needToWriteSomething2").textContent = "Etternavnet må fylles ut.";
     }
-    if (!/^\d{8}$/.test(phonenr)) {
+    if (!/^\d{8}$/.test(phonenr)) { // check if phone nr is correct (has 8 digits)
         document.getElementById("needNumber").textContent = "Skriv inn riktig mobilnummer.";
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { // check if email is correct
         document.getElementById("validEmail").textContent = "Skriv inn riktig e-post.";
     }
 
